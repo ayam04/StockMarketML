@@ -1,21 +1,21 @@
-*Stock Analysis with Machine Learning Documentation*
+_Stock Analysis with Machine Learning Documentation_
 
 The code provided performs stock analysis using machine learning techniques. It utilizes historical stock data to train a random forest classifier and make predictions about future stock prices. Additionally, it includes functionality to perform the analysis using Apache Spark's machine learning library.
 
-*Let's understand the code and its components in detail:*
+_Let's understand the code and its components in detail:_
 
-*1. Importing Required Libraries:* The code starts by importing the necessary libraries and modules, including yfinance for fetching stock data, datetime for handling dates, pandas for data manipulation, and various modules from sklearn and pyspark for machine learning tasks.
+_1. Importing Required Libraries:_ The code starts by importing the necessary libraries and modules, including yfinance for fetching stock data, datetime for handling dates, pandas for data manipulation, and various modules from sklearn and pyspark for machine learning tasks.
 
-*2. Ticker Class:* The Ticker class encapsulates the functionality related to stock analysis. It is responsible for fetching historical data, generating technical indicators, creating predictions, splitting the data, and training the machine learning model.
+_2. Ticker Class:_ The Ticker class encapsulates the functionality related to stock analysis. It is responsible for fetching historical data, generating technical indicators, creating predictions, splitting the data, and training the machine learning model.
 
-*Properties:*
+_Properties:_
 
    NUM_DAYS: The number of days of historical data to retrieve.
    INTERVAL: The sample rate of historical data.
    INDICATORS: A list of symbols representing technical indicators.
    
    
-*Methods:*
+_Methods:_
 
    __init__(self, symbol): The constructor initializes the Ticker object with the given stock symbol and calls the _get_historical_data() method.
 
@@ -37,7 +37,7 @@ _model(self): This method trains the random forest classifier and prints the tim
 
 _spark_rf(self): This method performs stock analysis using Spark's machine learning library. It creates a Spark DataFrame from the data, defines the features, splits the data into training and testing sets, assembles the features using VectorAssembler, and creates a pipeline with a Gradient Boosting Tree (GBT) classifier. It fits the pipeline on the training data, makes predictions on the testing data, and evaluates the accuracy.
 
-*3. Code Execution*
+_3. Code Execution_
 
 After defining the Ticker class and its methods, the code creates an instance of the Ticker class with the stock symbol 'SPY'. Then, it calls the _data_clean() and _spark_rf() methods to perform the stock analysis.
 
