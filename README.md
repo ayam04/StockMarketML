@@ -1,25 +1,21 @@
-Stock Analysis with Machine Learning Documentation
+*Stock Analysis with Machine Learning Documentation*
 
 The code provided performs stock analysis using machine learning techniques. It utilizes historical stock data to train a random forest classifier and make predictions about future stock prices. Additionally, it includes functionality to perform the analysis using Apache Spark's machine learning library.
 
-Let's understand the code and its components in detail:
+*Let's understand the code and its components in detail:*
 
-1. Importing Required Libraries:
+*1. Importing Required Libraries:* The code starts by importing the necessary libraries and modules, including yfinance for fetching stock data, datetime for handling dates, pandas for data manipulation, and various modules from sklearn and pyspark for machine learning tasks.
 
-The code starts by importing the necessary libraries and modules, including yfinance for fetching stock data, datetime for handling dates, pandas for data manipulation, and various modules from sklearn and pyspark for machine learning tasks.
+*2. Ticker Class:* The Ticker class encapsulates the functionality related to stock analysis. It is responsible for fetching historical data, generating technical indicators, creating predictions, splitting the data, and training the machine learning model.
 
-2. Ticker Class:
-
-The Ticker class encapsulates the functionality related to stock analysis. It is responsible for fetching historical data, generating technical indicators, creating predictions, splitting the data, and training the machine learning model.
-
-Properties:
+*Properties:*
 
    NUM_DAYS: The number of days of historical data to retrieve.
    INTERVAL: The sample rate of historical data.
    INDICATORS: A list of symbols representing technical indicators.
    
    
-Methods:
+*Methods:*
 
    __init__(self, symbol): The constructor initializes the Ticker object with the given stock symbol and calls the _get_historical_data() method.
 
@@ -27,7 +23,7 @@ Methods:
 
    _get_indicator_data(self): This method uses the finta API to calculate the technical indicators specified in the INDICATORS list. The calculated indicators are merged    with the existing stock data.
 
-   _produce_prediction(self, window=10): This method generates the "truth" values for the classification problem. It compares the current stock price with the price  window days ahead to determine if the price increased (1) or decreased (0). The predictions are stored in the pred column of the data.
+   _produce_prediction(self, window=10): This method generates the "truth" values for the classification problem. It compares the current stock price with the price window days ahead to determine if the price increased (1) or decreased (0). The predictions are stored in the pred column of the data.
 
 _produce_data(self, window): This is the main data processing method that calls other methods to smooth the data, calculate technical indicators, and create predictions based on a specified window. It also removes unnecessary columns from the data.
 
